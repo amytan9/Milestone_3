@@ -1,0 +1,19 @@
+---
+title: "milestone_3.Rmd"
+author: "Amy Tan"
+date: "10/1/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(foreign)
+library(haven)
+```
+
+```{r reading_in_data, echo=FALSE}
+stanforddata <- read_dta("~/Desktop/SEDA_county_long_CS_v21.dta")
+tract_covariates <- read_dta("~/Desktop/tract_covariates.dta")
+```
+
+
