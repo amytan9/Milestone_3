@@ -9,11 +9,27 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(foreign)
 library(haven)
+library(tidyverse)
 ```
 
 ```{r reading_in_data, echo=FALSE}
 stanforddata <- read_dta("~/Desktop/SEDA_county_long_CS_v21.dta")
 tract_covariates <- read_dta("~/Desktop/tract_covariates.dta")
 ```
+
+```{r basic_analysis, echo=FALSE, include=FALSE}
+view(stanforddata)
+glimpse(stanforddata)
+
+view(tract_covariates)
+glimpse(tract_covariates)
+```
+
+
+
+Description of the data:
+
+For my final project, I will be merging two datasets. I got the tract_covariates dataset from the Opportunity Insights website (https://opportunityinsights.org/data/) and the stanforddata dataset from the Stanford Education Data Archive (https://exhibits.stanford.edu/data/catalog/db586ns4974). The tract_covariates dataset describes economic and social factors of each Census tract, such as rates of intergenerational mobility and umemployment rates. The stanforddata dataset describes various academic variables for 3rd-8th graders across the nation by tract as well. It contains variables for academic achievement and student demographics. So far, I have just started poking around the data by viewing the entire dataset and also "glimpsing" into a piece of the dataset to see whether there are any anomalous data entires that I have to clean. I plan to merge these two datasets together by Census tract to compare variables in both datasets. Mainly I want to see whether there are any interesting correlations between the educational outcomes in the Stanford dataset and the economic outcomes from the Opportunity Insights dataset. If so, I can shed light on how the economic environment may affect schools' academic outcomes.
+
 
 
